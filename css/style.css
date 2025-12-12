@@ -471,9 +471,6 @@ h1 {
     gap: 1rem;
     padding: 1rem;
     border-radius: 10px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(248,249,250,0.9) 100%);
-    border: 1px solid rgba(0,123,255,0.2);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
