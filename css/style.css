@@ -154,18 +154,20 @@ h1 {
 
 .about-content {
     display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 3rem;
-    align-items: start;
+    grid-template-columns: 350px 1fr;
+    gap: 4rem;
+    align-items: center;
 }
 
 .about-image {
     width: 100%;
     height: auto;
-    border-radius: 50px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    stroke: #1a1a1a;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    border: 5px solid var(--primary-color);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .about-image:hover {
@@ -647,20 +649,16 @@ h1 {
 
 /* 主题切换按钮 */
 .theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: var(--primary-color);
     color: white;
     border: none;
     cursor: pointer;
-    font-size: 20px;
-    box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+    font-size: 18px;
+    margin-right: 10px;
     transition: all 0.3s ease;
-    z-index: 1001;
 }
 
 .theme-toggle:hover {

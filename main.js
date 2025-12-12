@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.project-card, .skill-tag, .contact-item').forEach(el => {
+    document.querySelectorAll('.project-card, .skill-tag, .contact-item, .about-image').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -124,7 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggle.textContent = '🌙';
     themeToggle.className = 'theme-toggle';
     themeToggle.setAttribute('aria-label', 'Toggle dark mode');
-    document.body.appendChild(themeToggle);
+    document.querySelector('.site-header .container')
+    .insertBefore(themeToggle, document.querySelector('.logo'));
 
     themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
