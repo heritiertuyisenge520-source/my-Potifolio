@@ -196,10 +196,43 @@ h1 {
     color: var(--dark-color);
 }
 
-.hero-content p {
+.animated-text {
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 2rem;
+    height: 1.6em;
+    overflow: hidden;
+    position: relative;
+}
+
+.animated-text span {
+    display: block;
+    animation: textCycle 20s infinite;
+    opacity: 0;
+    transform: translateY(30px);
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.animated-text span:nth-child(1) { animation-delay: 0s; }
+.animated-text span:nth-child(2) { animation-delay: 4s; }
+.animated-text span:nth-child(3) { animation-delay: 8s; }
+.animated-text span:nth-child(4) { animation-delay: 12s; }
+.animated-text span:nth-child(5) { animation-delay: 16s; }
+
+@keyframes textCycle {
+    0%, 16% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    20%, 80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    84%, 100% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
 }
 
 .hero-image {
