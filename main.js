@@ -90,6 +90,15 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.animationDelay = `${index * 150}ms`;
     });
 
+    // Add stagger animation delay for contact items
+    document.querySelectorAll('.contact-item').forEach((item, index) => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        item.style.animationDelay = `${index * 100}ms`;
+        observer.observe(item);
+    });
+
     //联系表单验证
     const contactForm = document.querySelector('form');
     if (contactForm) {
