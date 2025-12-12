@@ -78,11 +78,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.project-card, .skill-tag, .contact-item, .about-image').forEach(el => {
+    document.querySelectorAll('.skill-tag, .contact-item, .about-image').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
+    });
+
+    // Add stagger animation delay for project cards
+    document.querySelectorAll('.project-card').forEach((card, index) => {
+        card.style.animationDelay = `${index * 150}ms`;
     });
 
     //联系表单验证
