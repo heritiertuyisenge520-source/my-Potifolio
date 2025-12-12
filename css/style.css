@@ -504,6 +504,16 @@ h1 {
     overflow: hidden;
 }
 
+.contact-icon {
+    font-size: 1.5rem;
+    min-width: 40px;
+    text-align: center;
+}
+
+.contact-text {
+    flex: 1;
+}
+
 .contact-item::before {
     content: '';
     position: absolute;
@@ -627,18 +637,22 @@ h1 {
     position: relative;
 }
 
+.form-group {
+    position: relative;
+}
+
 .form-group::before {
     content: '';
     position: absolute;
     left: 15px;
     top: 50%;
     transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    background: var(--primary-color);
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    opacity: 0.7;
+    opacity: 0.8;
     transition: all 0.3s ease;
+    z-index: 1;
 }
 
 .form-group:nth-child(1)::before {
@@ -654,20 +668,22 @@ h1 {
 .form-group:nth-child(3)::before {
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>') center/contain no-repeat;
     background-color: var(--primary-color);
-    top: 20px;
+    top: 25px;
 }
 
 .form-group label {
     position: absolute;
     left: 50px;
-    top: 15px;
+    top: 50%;
+    transform: translateY(-50%);
     font-weight: 500;
     color: var(--text-color);
     transition: all 0.3s ease;
     pointer-events: none;
     background: var(--light-color);
-    padding: 0 5px;
+    padding: 0 8px;
     border-radius: 4px;
+    font-size: 0.9rem;
 }
 
 .form-group input:focus + label,
