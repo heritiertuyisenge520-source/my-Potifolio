@@ -200,18 +200,17 @@ h1 {
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 2rem;
-    height: 1.6em;
-    overflow: hidden;
     position: relative;
 }
 
 .animated-text span {
     display: block;
-    animation: textCycle 10s infinite;
+    animation: textBuild 18s infinite;
     opacity: 0;
     transform: translateY(30px);
     color: var(--primary-color);
     font-weight: 500;
+    position: relative;
 }
 
 .animated-text span:nth-child(1) { animation-delay: 0s; }
@@ -220,16 +219,16 @@ h1 {
 .animated-text span:nth-child(4) { animation-delay: 6s; }
 .animated-text span:nth-child(5) { animation-delay: 8s; }
 
-@keyframes textCycle {
-    0%, 16% {
+@keyframes textBuild {
+    0% {
         opacity: 0;
         transform: translateY(30px);
     }
-    20%, 80% {
+    10%, 90% {
         opacity: 1;
         transform: translateY(0);
     }
-    84%, 100% {
+    95%, 100% {
         opacity: 0;
         transform: translateY(-30px);
     }
