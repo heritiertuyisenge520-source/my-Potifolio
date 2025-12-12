@@ -110,17 +110,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const message = document.getElementById('message').value.trim();
 
             if (!name || !email || !message) {
-                alert('Please fill in all fields.');
+                showFormMessage('Please fill in all fields.', 'error');
                 return;
             }
 
             if (!isValidEmail(email)) {
-                alert('Please enter a valid email address.');
+                showFormMessage('Please enter a valid email address.', 'error');
                 return;
             }
 
             //模拟表单提交
-            alert('Thank you for your message! I will get back to you soon.');
+            showFormMessage('Thank you for your message! I will get back to you soon.', 'success');
 
             //清空表单
             contactForm.reset();
@@ -131,6 +131,18 @@ document.addEventListener('DOMContentLoaded', () => {
     function isValidEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
+    }
+
+    //表单消息显示函数
+    function showFormMessage(message, type) {
+        const messageDiv = document.getElementById('form-message');
+        messageDiv.textContent = message;
+        messageDiv.className = `form-message ${type}`;
+        messageDiv.style.display = 'block';
+
+        setTimeout(() => {
+            messageDiv.style.display = 'none';
+        }, 5000);
     }
 
     //暗模式切换
